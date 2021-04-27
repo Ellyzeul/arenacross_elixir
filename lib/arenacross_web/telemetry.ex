@@ -1,4 +1,4 @@
-defmodule CrossarenaWeb.Telemetry do
+defmodule ArenacrossWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule CrossarenaWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("crossarena.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("crossarena.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("crossarena.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("crossarena.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("crossarena.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("arenacross.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("arenacross.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("arenacross.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("arenacross.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("arenacross.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule CrossarenaWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {CrossarenaWeb, :count_users, []}
+      # {ArenacrossWeb, :count_users, []}
     ]
   end
 end

@@ -1,13 +1,14 @@
 use Mix.Config
 
 # Configure your database
-config :crossarena, Crossarena.Repo,
+config :arenacross, Arenacross.Repo,
   username: "postgres",
   password: "postgres",
-  database: "crossarena_dev",
+  database: "arenacross_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  queue_target: 5000
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -15,7 +16,7 @@ config :crossarena, Crossarena.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :crossarena, CrossarenaWeb.Endpoint,
+config :arenacross, ArenacrossWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

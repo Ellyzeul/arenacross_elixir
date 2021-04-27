@@ -1,4 +1,4 @@
-defmodule Crossarea.Schedule do
+defmodule Arenacross.Schedule do
   use Ecto.Schema
 
   import Ecto.Changeset
@@ -12,7 +12,7 @@ defmodule Crossarea.Schedule do
     field :email, :string
     field :cellphone, :string
     field :scheduled_hour, :naive_datetime
-    field :add, :boolean, default: false
+    field :checked, :boolean, default: false
   end
 
   def changeset(params) do
@@ -22,5 +22,13 @@ defmodule Crossarea.Schedule do
     |> validate_length(:name, min: 3)
     |> validate_format(:email, ~r/.{1,}@+.{1,}\..{1,}/)
     |> validate_format(:cellphone, ~r/\(([0-9]){2}\)+[ ]+([0-9]){4,5}-+([0-9]){4}/)
+    |> validate_naive_datetime(:scheduled_hour)
+  end
+
+  defp validate_naive_datetime(changeset, field_name) do
+    case DateTime.from_iso8601(Map.get(changeset, field_name)) do
+      {:ok, datetime, _utc_offset} -> Map.replace(changeset, field_name, DateTime.to_naive(datetime))
+      {:error, _atoms} -> add_error(changeset, field_name, "invalid naive datetime format")
+    end
   end
 end

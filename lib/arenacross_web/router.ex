@@ -1,11 +1,11 @@
-defmodule CrossarenaWeb.Router do
-  use CrossarenaWeb, :router
+defmodule ArenacrossWeb.Router do
+  use ArenacrossWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", CrossarenaWeb do
+  scope "/api", ArenacrossWeb do
     pipe_through :api
   end
 
@@ -21,7 +21,7 @@ defmodule CrossarenaWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: CrossarenaWeb.Telemetry
+      live_dashboard "/dashboard", metrics: ArenacrossWeb.Telemetry
     end
   end
 end

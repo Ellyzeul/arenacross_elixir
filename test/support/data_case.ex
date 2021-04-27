@@ -1,4 +1,4 @@
-defmodule Crossarena.DataCase do
+defmodule Arenacross.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule Crossarena.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use Crossarena.DataCase, async: true`, although
+  by setting `use Arenacross.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule Crossarena.DataCase do
 
   using do
     quote do
-      alias Crossarena.Repo
+      alias Arenacross.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Crossarena.DataCase
+      import Arenacross.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Crossarena.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Arenacross.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Crossarena.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Arenacross.Repo, {:shared, self()})
     end
 
     :ok

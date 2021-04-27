@@ -1,4 +1,4 @@
-defmodule CrossarenaWeb.ErrorHelpers do
+defmodule ArenacrossWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule CrossarenaWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(CrossarenaWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(ArenacrossWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(CrossarenaWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(ArenacrossWeb.Gettext, "errors", msg, opts)
     end
   end
 end

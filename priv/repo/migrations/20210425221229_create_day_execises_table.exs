@@ -1,4 +1,4 @@
-defmodule Crossarena.Repo.Migrations.CreateDayExecisesTable do
+defmodule Arenacross.Repo.Migrations.CreateDayExecisesTable do
   use Ecto.Migration
 
   def change do

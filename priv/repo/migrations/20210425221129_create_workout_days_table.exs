@@ -1,4 +1,4 @@
-defmodule Crossarena.Repo.Migrations.CreateWorkoutDaysTable do
+defmodule Arenacross.Repo.Migrations.CreateWorkoutDaysTable do
   use Ecto.Migration
 
   def change do

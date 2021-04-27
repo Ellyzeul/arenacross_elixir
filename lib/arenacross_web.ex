@@ -1,12 +1,12 @@
-defmodule CrossarenaWeb do
+defmodule ArenacrossWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use CrossarenaWeb, :controller
-      use CrossarenaWeb, :view
+      use ArenacrossWeb, :controller
+      use ArenacrossWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule CrossarenaWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: CrossarenaWeb
+      use Phoenix.Controller, namespace: ArenacrossWeb
 
       import Plug.Conn
-      import CrossarenaWeb.Gettext
-      alias CrossarenaWeb.Router.Helpers, as: Routes
+      import ArenacrossWeb.Gettext
+      alias ArenacrossWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/crossarena_web/templates",
-        namespace: CrossarenaWeb
+        root: "lib/arenacross_web/templates",
+        namespace: ArenacrossWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule CrossarenaWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import CrossarenaWeb.Gettext
+      import ArenacrossWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule CrossarenaWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import CrossarenaWeb.ErrorHelpers
-      import CrossarenaWeb.Gettext
-      alias CrossarenaWeb.Router.Helpers, as: Routes
+      import ArenacrossWeb.ErrorHelpers
+      import ArenacrossWeb.Gettext
+      alias ArenacrossWeb.Router.Helpers, as: Routes
     end
   end
 

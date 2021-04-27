@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :crossarena,
-  ecto_repos: [Crossarena.Repo]
+config :arenacross,
+  ecto_repos: [Arenacross.Repo]
 
 # Configures the endpoint
-config :crossarena, CrossarenaWeb.Endpoint,
+config :arenacross, ArenacrossWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5bIJpKTqCIH0JUp+MKzRdxOcbKVTkEV55OoMOWUA0vfFg+Lc7/xIcWvNuEmlkRZP",
-  render_errors: [view: CrossarenaWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Crossarena.PubSub,
+  render_errors: [view: ArenacrossWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Arenacross.PubSub,
   live_view: [signing_salt: "WazGfgg4"]
 
 # Configures Elixir's Logger

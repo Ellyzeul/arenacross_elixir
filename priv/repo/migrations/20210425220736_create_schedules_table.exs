@@ -1,4 +1,4 @@
-defmodule Crossarena.Repo.Migrations.CreateSchedulesTable do
+defmodule Arenacross.Repo.Migrations.CreateSchedulesTable do
   use Ecto.Migration
 
   def change do

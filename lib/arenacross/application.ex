@@ -1,4 +1,4 @@
-defmodule Crossarena.Application do
+defmodule Arenacross.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,27 +8,27 @@ defmodule Crossarena.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Crossarena.Repo,
+      Arenacross.Repo,
       # Start the Telemetry supervisor
-      CrossarenaWeb.Telemetry,
+      ArenacrossWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Crossarena.PubSub},
+      {Phoenix.PubSub, name: Arenacross.PubSub},
       # Start the Endpoint (http/https)
-      CrossarenaWeb.Endpoint
-      # Start a worker by calling: Crossarena.Worker.start_link(arg)
-      # {Crossarena.Worker, arg}
+      ArenacrossWeb.Endpoint
+      # Start a worker by calling: Arenacross.Worker.start_link(arg)
+      # {Arenacross.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Crossarena.Supervisor]
+    opts = [strategy: :one_for_one, name: Arenacross.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    CrossarenaWeb.Endpoint.config_change(changed, removed)
+    ArenacrossWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -1,5 +1,5 @@
-defmodule CrossarenaWeb.ErrorView do
-  use CrossarenaWeb, :view
+defmodule ArenacrossWeb.ErrorView do
+  use ArenacrossWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

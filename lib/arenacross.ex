@@ -1,4 +1,4 @@
-defmodule Crossarena do
+defmodule Arenacross do
   @moduledoc """
   Crossarena keeps the contexts that define your domain
   and business logic.

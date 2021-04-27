@@ -1,5 +1,5 @@
-defmodule Crossarena.Repo do
+defmodule Arenacross.Repo do
   use Ecto.Repo,
-    otp_app: :crossarena,
+    otp_app: :arenacross,
     adapter: Ecto.Adapters.Postgres
 end
